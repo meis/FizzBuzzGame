@@ -1,0 +1,38 @@
+{
+  "name": "fizz-buzz-game",
+  "version": "0.0.1",
+  "description": "The FizzBuzz Game! Play like a real programmer",
+  "main": "src/game.jsx",
+  "private": true,
+  "scripts": {
+    "start": "gulp serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meis/FizzBuzzGame.git"
+  },
+  "keywords": [
+    "fizz",
+    "buzz",
+    "fizzbuzz",
+    "game"
+  ],
+  "author": "Marc Egea i Sala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meis/FizzBuzzGame/issues"
+  },
+  "homepage": "https://github.com/meis/FizzBuzzGame#readme",
+  "dependencies": {
+    "alt": "^0.17.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "browser-sync": "^2.8.2",
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
