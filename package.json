@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "gulp serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -26,13 +26,21 @@
   "homepage": "https://github.com/meis/FizzBuzzGame#readme",
   "dependencies": {
     "alt": "^0.17.1",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "shuffle-array": "^0.1.0"
   },
   "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-core": "^5.8.21",
     "babelify": "^6.1.3",
     "browser-sync": "^2.8.2",
     "browserify": "^11.0.1",
+    "chai": "^3.2.0",
     "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.3",
+    "gulp-util": "^3.0.6",
+    "has-binary": "0.1.5",
+    "mocha": "^2.2.5",
     "vinyl-source-stream": "^1.1.0"
   }
 }
