@@ -1,4 +1,4 @@
-import alt from '../alt';
+import Alt from '../Alt';
 import shuffle from 'shuffle-array';
 
 class GameStore {
@@ -12,4 +12,4 @@ class GameStore {
   }
 }
 
-export default alt.createStore(GameStore, 'GameStore');
+export default Alt.createStore(GameStore, 'GameStore');
