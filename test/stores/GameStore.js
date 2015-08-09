@@ -12,9 +12,17 @@ describe('GameStore', () => {
   it('sets up instance properties correctly', () => {
     assert.equal(GameStore.getState().remaining, 100);
     assert.equal(GameStore.getState().finished, false);
+    assert.equal(GameStore.getState().score, 0);
     assert.isNumber(GameStore.getState().nextPlay);
     assert.isAbove(GameStore.getState().nextPlay, 0);
     assert.isBelow(GameStore.getState().nextPlay, 101);
+  });
+
+  it('sets up square values correctly', () => {
+    assert.equal(GameStore.getState().squares.length, 9);
+    GameStore.getState().squares.forEach( (s) => {
+      assert.equal(s, 0);
+    });
   });
 
   it('decreases the number of plays as game goes along', () => {
