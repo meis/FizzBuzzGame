@@ -21,7 +21,7 @@ class GameStore {
     };
   }
 
-  onPlay(square = 0) {
+  onPut(square = 0) {
     this.state.remaining--;
 
     this.state.finished = this.state.remaining === 0;

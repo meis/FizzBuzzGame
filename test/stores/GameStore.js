@@ -27,16 +27,16 @@ describe('GameStore', () => {
 
   it('decreases the number of plays as game goes along', () => {
     assert.equal(GameStore.getState().remaining, 100);
-    Alt.dispatcher.dispatch({ action: GameActions.PLAY, data: 0 });
+    GameActions.put();
     assert.equal(GameStore.getState().remaining, 99);
-    Alt.dispatcher.dispatch({ action: GameActions.PLAY, data: 0 });
+    GameActions.put();
     assert.equal(GameStore.getState().remaining, 98);
     assert.equal(GameStore.getState().finished, false);
   });
 
   it('finish game after 100 plays', () => {
     for(let i = 0; i < 100; i++) {
-      Alt.dispatcher.dispatch({ action: GameActions.PLAY, data: 0 });
+      GameActions.put();
     }
     assert.equal(GameStore.getState().finished, true);
   });
