@@ -1,6 +1,7 @@
 import React     from 'react';
 import Remaining from './Remaining';
 import Squares   from './Squares';
+import Score     from './Score';
 import GameStore from '../stores/GameStore';
 import connectToStores from 'alt/utils/connectToStores';
 
@@ -23,6 +24,7 @@ class FizzBuzzGame extends React.Component {
           finished ={this.props.finished}
           squares  ={this.props.squares}
         />
+        <Score score={this.props.score} combo={this.props.combo} />
       </div>
     );
   }
