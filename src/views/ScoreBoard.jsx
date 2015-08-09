@@ -4,8 +4,8 @@ export default React.createClass({
   render: function() {
     return(
       <div id="scoreBoard">
-        <div className="next">
-          <span>Next</span>
+        <div className="current">
+          <span>Current</span>
           <span className="value">{this.props.remaining[0] || ''}</span>
         </div>
         <div className="remaining">
