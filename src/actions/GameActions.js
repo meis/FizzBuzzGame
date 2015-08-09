@@ -1,3 +1,3 @@
 import Alt from '../Alt';
 
-export default Alt.generateActions('put');
+export default Alt.generateActions('put', 'reset');

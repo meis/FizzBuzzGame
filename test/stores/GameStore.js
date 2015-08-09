@@ -88,4 +88,18 @@ describe('GameStore', () => {
     assert.equal(GameStore.getState().score, 10*5 + 259);
     assert.equal(GameStore.getState().combos[0], 'buzz');
   });
+
+  it('resets its values', () => {
+    GameActions.put(0,9);
+    GameActions.put(0,9);
+    GameActions.put(0,9);
+    GameActions.put(0,9);
+    GameActions.reset();
+    assert.equal(GameStore.getState().remaining.length, 100);
+    assert.equal(GameStore.getState().finished, false);
+    assert.equal(GameStore.getState().score, 0);
+    assert.isNumber(GameStore.getState().remaining[0]);
+    assert.isAbove(GameStore.getState().remaining[0], 0);
+    assert.isBelow(GameStore.getState().remaining[0], 101);
+  });
 });

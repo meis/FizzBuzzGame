@@ -7,14 +7,21 @@ export class GameStore {
   constructor(positions = 9) {
     this.positions = positions;
     this.bindActions(GameActions);
+    this.state = this.initialState();
+  }
 
-    this.state = {
+  initialState() {
+    return {
       remaining: shuffle(Array.apply(0, Array(100)).map( (x, y) => { return y + 1 } )),
       finished : false,
       score    : 0,
       squares  : Array.apply(0, Array(this.positions)).map( (x) => { return 0 } ),
       combos   : Array(this.positions),
     };
+  }
+
+  onReset() {
+    this.setState(this.initialState());
   }
 
   onPut(args = 0) {

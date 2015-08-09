@@ -93,6 +93,22 @@ body {
   position: relative;
 }
 
+#reset {
+  width: 60%;
+  margin-left: 20%;
+  font-size: 55px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #f06060;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#reset:hover {
+  border: 1px solid #f09090;
+}
+
 #howto {
   margin-top: 30px;
   padding: 20px;

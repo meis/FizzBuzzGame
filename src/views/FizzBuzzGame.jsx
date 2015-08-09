@@ -2,6 +2,7 @@ import React      from 'react';
 import Title      from './Title';
 import Squares    from './Squares';
 import Scoreboard from './ScoreBoard';
+import Reset      from './Reset';
 import Howto      from './HowTo';
 import GameStore  from '../stores/GameStore';
 import connectToStores from 'alt/utils/connectToStores';
@@ -29,6 +30,7 @@ class FizzBuzzGame extends React.Component {
           squares  ={this.props.squares}
           combos   ={this.props.combos}
         />
+        <Reset />
         <Howto />
       </div>
     );
