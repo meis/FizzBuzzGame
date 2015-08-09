@@ -9,11 +9,11 @@ class Square {
     let bonus = 1;
     let combo = '';
 
-    if (this.value % 3 == 0) {
+    if (this.value % 3 == 0 && num != 0) {
       combo += 'fizz';
       bonus *= 3;
     }
-    if (this.value % 5 == 0) {
+    if (this.value % 5 == 0 && num != 0) {
       combo += 'buzz';
       bonus *= 5;
     }

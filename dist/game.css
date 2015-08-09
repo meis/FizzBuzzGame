@@ -53,6 +53,7 @@ body {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 #squares .square {
@@ -91,6 +92,24 @@ body {
   padding-top: 34%;
   text-align: center;
   position: relative;
+}
+
+#game-over {
+  position: absolute;
+  width: 470px;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 6px;
+}
+
+#game-over .text {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-top: 44%;
 }
 
 #reset {

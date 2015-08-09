@@ -12,7 +12,17 @@ export default React.createClass({
     return(
       <div id="squares">
         {squares}
+        {this.gameOver()}
       </div>
     );
+  },
+
+  gameOver: function() {
+    if (this.props.finished) {
+      return <div id="game-over"><div className="text">Game Over!</div></div>
+    }
+    else {
+      return '';
+    }
   },
 });

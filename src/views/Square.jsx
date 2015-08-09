@@ -1,7 +1,6 @@
 import React       from 'react/addons';
 import GameActions from '../actions/GameActions';
 
-
 export default React.createClass({
   shouldComponentUpdate: function(nextProps, nextState) {
     return nextProps.combo || nextProps.value != this.props.value;

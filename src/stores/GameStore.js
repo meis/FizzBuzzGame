@@ -4,15 +4,16 @@ import Square      from '../models/Square';
 import shuffle     from 'shuffle-array';
 
 export class GameStore {
-  constructor(positions = 9) {
+  constructor(positions = 9, moves = 100) {
     this.positions = positions;
+    this.moves = moves;
     this.bindActions(GameActions);
     this.state = this.initialState();
   }
 
   initialState() {
     return {
-      remaining: shuffle(Array.apply(0, Array(100)).map( (x, y) => { return y + 1 } )),
+      remaining: shuffle(Array.apply(0, Array(this.moves)).map( (x, y) => { return y + 1 } )),
       finished : false,
       score    : 0,
       squares  : Array.apply(0, Array(this.positions)).map( (x) => { return 0 } ),
