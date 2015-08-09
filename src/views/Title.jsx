@@ -4,7 +4,7 @@ export default React.createClass({
   render: function() {
     let titleStyle = {
       textAlign: 'center',
-      marginBottom: '10px',
+      marginBottom: '0',
     };
 
     let subTitleStyle = {
