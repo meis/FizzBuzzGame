@@ -1,6 +1,4 @@
 import React from 'react';
+import Game  from './views/FizzBuzzGame';
 
-React.render(
-  <h1>FizzBuzz Game</h1>,
-  document.body
-);
+React.render(<Game />, document.body);
