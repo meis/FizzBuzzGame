@@ -44,4 +44,49 @@ describe('GameStore', () => {
     assert.isUndefined(GameStore.getState().remaining[0]);
     assert.equal(GameStore.getState().finished, true);
   });
+
+  it('updates squares on add', () => {
+    GameActions.put(0,1);
+    assert.equal(GameStore.getState().squares[0], 1);
+
+    GameActions.put(0,3);
+    assert.equal(GameStore.getState().squares[0], 4);
+
+    GameActions.put(1,8);
+    assert.equal(GameStore.getState().squares[1], 8);
+    assert.equal(GameStore.getState().squares[0], 4);
+  });
+
+  it('updates score and throws combos on add', () => {
+    assert.equal(GameStore.getState().score, 0);
+    assert.equal(GameStore.getState().combo, '');
+
+    GameActions.put(0,3);
+    assert.equal(GameStore.getState().score, 3*3);
+    assert.equal(GameStore.getState().combo, 'fizz');
+
+    GameActions.put(0,1);
+    assert.equal(GameStore.getState().score, 9);
+    assert.equal(GameStore.getState().combo, '');
+
+    GameActions.put(1,2);
+    assert.equal(GameStore.getState().score, 9);
+    assert.equal(GameStore.getState().combo, '');
+
+    GameActions.put(1,3);
+    assert.equal(GameStore.getState().score, 9 + 5*5);
+    assert.equal(GameStore.getState().combo, 'buzz');
+
+    GameActions.put(3,11);
+    assert.equal(GameStore.getState().score, 34);
+    assert.equal(GameStore.getState().combo, '');
+
+    GameActions.put(3,4);
+    assert.equal(GameStore.getState().score, 15*15 + 34);
+    assert.equal(GameStore.getState().combo, 'fizzbuzz');
+
+    GameActions.put(0,9);
+    assert.equal(GameStore.getState().score, 10*5 + 259);
+    assert.equal(GameStore.getState().combo, 'buzz');
+  });
 });
