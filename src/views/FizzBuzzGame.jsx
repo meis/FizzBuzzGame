@@ -15,33 +15,20 @@ class FizzBuzzGame extends React.Component {
   }
 
   render() {
-    let bodyStyle = {
-      backgroundColor: '#fff5c3',
-      fontFamily: "Clear Sans, Helvetica Neue, Arial, sans-serif",
-      color: '#505050',
-    };
-
-    let style = {
-      width: '490px',
-      margin: '0 auto',
-    };
-
     return(
-      <body style={bodyStyle}>
-        <div style={style}>
-          <Title />
-          <Scoreboard
-            score={this.props.score}
-            combo={this.props.combo}
-            remaining={this.props.remaining}
-          />
-          <Squares
-            remaining={this.props.remaining}
-            finished ={this.props.finished}
-            squares  ={this.props.squares}
-          />
-        </div>
-      </body>
+      <div id="gameWrapper">
+        <Title />
+        <Scoreboard
+          score    ={this.props.score}
+          remaining={this.props.remaining}
+        />
+        <Squares
+          remaining={this.props.remaining}
+          finished ={this.props.finished}
+          squares  ={this.props.squares}
+          combos   ={this.props.combos}
+        />
+      </div>
     );
   }
 }

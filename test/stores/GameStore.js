@@ -59,34 +59,33 @@ describe('GameStore', () => {
 
   it('updates score and throws combos on add', () => {
     assert.equal(GameStore.getState().score, 0);
-    assert.equal(GameStore.getState().combo, '');
 
     GameActions.put(0,3);
     assert.equal(GameStore.getState().score, 3*3);
-    assert.equal(GameStore.getState().combo, 'fizz');
+    assert.equal(GameStore.getState().combos[0], 'fizz');
 
     GameActions.put(0,1);
     assert.equal(GameStore.getState().score, 9);
-    assert.equal(GameStore.getState().combo, '');
+    assert.equal(GameStore.getState().combos[0], '');
 
     GameActions.put(1,2);
     assert.equal(GameStore.getState().score, 9);
-    assert.equal(GameStore.getState().combo, '');
+    assert.equal(GameStore.getState().combos[1], '');
 
     GameActions.put(1,3);
     assert.equal(GameStore.getState().score, 9 + 5*5);
-    assert.equal(GameStore.getState().combo, 'buzz');
+    assert.equal(GameStore.getState().combos[1], 'buzz');
 
     GameActions.put(3,11);
     assert.equal(GameStore.getState().score, 34);
-    assert.equal(GameStore.getState().combo, '');
+    assert.equal(GameStore.getState().combos[3], '');
 
     GameActions.put(3,4);
     assert.equal(GameStore.getState().score, 15*15 + 34);
-    assert.equal(GameStore.getState().combo, 'fizzbuzz');
+    assert.equal(GameStore.getState().combos[3], 'fizzbuzz');
 
     GameActions.put(0,9);
     assert.equal(GameStore.getState().score, 10*5 + 259);
-    assert.equal(GameStore.getState().combo, 'buzz');
+    assert.equal(GameStore.getState().combos[0], 'buzz');
   });
 });

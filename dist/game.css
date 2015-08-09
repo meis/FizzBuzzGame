@@ -1,0 +1,61 @@
+body {
+  background-color: #fff5c3;
+  font-family: "Clear Sans", "Helvetica Neue", "Arial", "sans-serif";
+  color: #505050;
+}
+
+#gameWrapper {
+  width: 490px;
+  margin: 0 auto;
+}
+
+#title h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#title h2 {
+  text-align: center;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+#scoreBoard .next,
+#scoreBoard .remaining,
+#scoreBoard .score {
+  display: inline-block;
+  width: 150px;
+  margin: 0 0 10px 10px;
+  text-align: center;
+}
+
+#scoreBoard .value {
+  display: block;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#squares {
+  background: #ff7260;
+  border-radius: 6px;
+  padding: 10px 10px 0 0;
+  margin-top: 10px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#squares .square {
+  display: inline-block;
+  background-color: #9BD7D5;
+  height: 150px;
+  width: 150px;
+  margin: 0 0 10px 10px;
+  cursor: pointer;
+  line-height: 45px;
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+}

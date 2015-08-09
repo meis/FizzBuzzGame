@@ -2,23 +2,14 @@ import React       from 'react';
 import GameActions from '../actions/GameActions';
 
 export default React.createClass({
-  render: function() {
-    let style = {
-      display: 'inline-block',
-      backgroundColor: '#9BD7D5',
-      height: '150px',
-      width: '150px',
-      margin: '0 0 10px 10px',
-      cursor: 'pointer',
-      lineHeight: '45px',
-      textAlign: 'center',
-      fontSize: '55px',
-      fontWeight: 'bold',
-    };
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return nextProps.combo || nextProps.value != this.props.value;
+  },
 
+  render: function() {
     return(
-      <div onClick={this.handleClick} style={style}>
-        <p>{this.props.value}</p>
+      <div className='square' onClick={this.handleClick}>
+        <p>{this.props.value}</p>{this.props.combo}
       </div>
     );
   },

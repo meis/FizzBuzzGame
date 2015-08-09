@@ -4,15 +4,16 @@ import Square      from '../models/Square';
 import shuffle     from 'shuffle-array';
 
 export class GameStore {
-  constructor(squares = 9) {
+  constructor(positions = 9) {
+    this.positions = positions;
     this.bindActions(GameActions);
 
     this.state = {
       remaining: shuffle(Array.apply(0, Array(100)).map( (x, y) => { return y + 1 } )),
       finished : false,
       score    : 0,
-      squares  : Array.apply(0, Array(squares)).map( (x) => { return 0 } ),
-      combo    : '',
+      squares  : Array.apply(0, Array(this.positions)).map( (x) => { return 0 } ),
+      combos   : Array(this.positions),
     };
   }
 
@@ -34,11 +35,13 @@ export class GameStore {
     // Update square
     let squares = this.state.squares;
     let square  = new Square(squares[position]);
-    let combo   = square.add(value);
+    let combos  = Array(this.positions);
+    combos[position] = square.add(value);
+
     let score   = this.state.score + square.score;
     squares[position] = square.value;
 
-    this.setState({ finished, remaining, squares, score, combo });
+    this.setState({ finished, remaining, squares, score, combos });
   }
 }
 
