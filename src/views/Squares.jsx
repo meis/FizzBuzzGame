@@ -14,6 +14,10 @@ export default React.createClass({
       borderRadius: '6px',
       padding: '10px 10px 0 0',
       marginTop: '10px',
+      MozUserSelect: 'none',
+      msUserSelect: 'none',
+      WebkitUserSelect: 'none',
+      userSelect: 'none',
     };
 
     return(
