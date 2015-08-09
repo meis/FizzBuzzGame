@@ -54,8 +54,62 @@ body {
   width: 150px;
   margin: 0 0 10px 10px;
   cursor: pointer;
-  line-height: 45px;
   text-align: center;
   font-size: 55px;
   font-weight: bold;
+  position: relative;
+  border-radius: 3px;
+}
+
+#squares .square .combo {
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: #ff7260;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+
+#squares .square .value{
+  margin-left: -100%;
+  margin-right: -100%;
+  top: 33%;
+  padding-top: 34%;
+  text-align: center;
+  position: relative;
+}
+
+.blink-appear {
+  opacity: 1;
+  display: block !important;
+}
+
+.blink-appear.blink-appear-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
+}
+
+.blink-enter {
+  opacity: 1;
+  display: block !important;
+}
+
+.blink-enter.blink-enter-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
+}
+
+.blink-leave {
+  opacity: 1;
+  display: block !important;
+}
+
+.blink-leave.blink-leave-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
 }

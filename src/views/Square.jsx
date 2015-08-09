@@ -1,5 +1,6 @@
-import React       from 'react';
+import React       from 'react/addons';
 import GameActions from '../actions/GameActions';
+
 
 export default React.createClass({
   shouldComponentUpdate: function(nextProps, nextState) {
@@ -7,11 +8,28 @@ export default React.createClass({
   },
 
   render: function() {
+    let ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
     return(
       <div className='square' onClick={this.handleClick}>
-        <p>{this.props.value}</p>{this.props.combo}
+        <span className='value'>{this.props.value}</span>
+        <ReactCSSTransitionGroup transitionName="blink">
+          { this.combo() }
+        </ReactCSSTransitionGroup>
       </div>
     );
+  },
+
+  combo: function() {
+    if ( this.props.combo == 'fizz' ) {
+      return <span key='blink' className="combo"><span className="value">Fizz!</span></span>
+    }
+    if ( this.props.combo == 'buzz' ) {
+      return <span key='blink' className="combo"><span className="value">Buzz!</span></span>
+    }
+    if ( this.props.combo == 'fizzbuzz' ) {
+      return <span key='blink' className="combo"><span className="value">FizzBuzz!</span></span>
+    }
+    return '';
   },
 
   handleClick: function(ev) {
