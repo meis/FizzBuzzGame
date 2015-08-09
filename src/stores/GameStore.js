@@ -3,32 +3,33 @@ import GameActions from '../actions/GameActions';
 import Square      from '../models/Square';
 import shuffle     from 'shuffle-array';
 
-class GameStore {
-
+export class GameStore {
   constructor(squares = 9) {
     this.bindActions(GameActions);
 
-    this._squares = squares;
-    this._values  = shuffle(Array.apply(0, Array(100)).map( (x, y) => { return y + 1 } ));
-    this._squares = Array.apply(0, Array(squares)).map( (x) => { return new Square() } );
-
     this.state = {
-      remaining: 100,
-      nextPlay : this._values.pop(),
+      remaining: shuffle(Array.apply(0, Array(100)).map( (x, y) => { return y + 1 } )),
       finished : false,
       score    : 0,
-      squares  : this.squareValues(),
+      squares  : Array.apply(0, Array(squares)).map( (x) => { return 0 } ),
     };
   }
 
-  onPut(square = 0) {
-    this.state.remaining--;
+  onPut(args = 0) {
+    let square    = args;
+    let remaining = this.state.remaining;
+    let value     = remaining.shift();
 
-    this.state.finished = this.state.remaining === 0;
-  }
+    // It's possible to pass [square, value] to args. This comes for free
+    // with 'alt' and its convenient for testing purposes.
+    if (Array.isArray(args)) {
+      square = args[0];
+      value  = args[1];
+    }
 
-  squareValues() {
-    return this._squares.map( (s) => { return s.value } );
+    let finished = remaining.length === 0;
+
+    this.setState({ finished, remaining });
   }
 }
 
