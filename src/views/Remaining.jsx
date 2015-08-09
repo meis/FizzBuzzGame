@@ -1,5 +1,4 @@
-import React       from 'react';
-import GameActions from '../actions/GameActions';
+import React from 'react';
 
 export default React.createClass({
   render: function() {
