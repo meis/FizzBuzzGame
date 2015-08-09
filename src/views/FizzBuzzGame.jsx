@@ -16,9 +16,9 @@ class FizzBuzzGame extends React.Component {
 
   render() {
     let bodyStyle = {
-      backgroundColor: '#faf8ef',
+      backgroundColor: '#fff5c3',
       fontFamily: "Clear Sans, Helvetica Neue, Arial, sans-serif",
-      color: '#776e65',
+      color: '#505050',
     };
 
     let style = {

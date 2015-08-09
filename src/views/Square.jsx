@@ -5,7 +5,7 @@ export default React.createClass({
   render: function() {
     let style = {
       display: 'inline-block',
-      backgroundColor: '#eee4da',
+      backgroundColor: '#9BD7D5',
       height: '150px',
       width: '150px',
       margin: '0 0 10px 10px',

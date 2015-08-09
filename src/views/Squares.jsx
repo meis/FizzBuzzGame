@@ -10,7 +10,7 @@ export default React.createClass({
     });
 
     let style = {
-      background: '#bbada0',
+      background: '#ff7260',
       borderRadius: '6px',
       padding: '10px 10px 0 0',
       marginTop: '10px',
