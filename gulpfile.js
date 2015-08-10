@@ -10,7 +10,7 @@ var reload      = browserSync.reload;
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['test'], function () {
+gulp.task('build', function () {
   browserify({
     entries: 'src/game.jsx',
     extensions: ['.jsx'],
@@ -23,7 +23,7 @@ gulp.task('build', ['test'], function () {
   .on('error', util.log);
 });
 
-gulp.task('test', function () {
+gulp.task('test', ['build'], function () {
   return gulp.src(['test/**/*.js'], { read: false })
     .pipe(mocha({
       reporter: 'spec',
@@ -42,7 +42,7 @@ gulp.task('serve', function () {
 
 gulp.task('watch', ['build','serve'], function () {
   gulp.watch("./src/**/*" , ['build','test']);
-  gulp.watch("./test/**/*", ['test']);
+  gulp.watch("./test/**/*", ['build','test']);
   gulp.watch("./dist/**/*", ['reload']);
 });
 
