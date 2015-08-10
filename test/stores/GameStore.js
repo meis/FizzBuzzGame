@@ -1,6 +1,6 @@
-import Alt         from 'src/Alt';
-import GameStore   from 'src/stores/GameStore';
-import GameActions from 'src/actions/GameActions';
+import Alt         from '../../src/Alt';
+import GameStore   from '../../src/stores/GameStore';
+import GameActions from '../../src/actions/GameActions';
 import {assert}    from 'chai';
 
 describe('GameStore', () => {

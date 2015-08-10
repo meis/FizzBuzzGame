@@ -1,4 +1,4 @@
-import Square   from 'src/models/Square';
+import Square   from '../../src/models/Square';
 import {assert} from 'chai';
 
 describe('Square', () => {
