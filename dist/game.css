@@ -100,21 +100,21 @@ body {
   top: 10px;
   left: 10px;
   bottom: 10px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: #9BD7D5;
   border-radius: 6px;
 }
 
 #game-over .text {
-  font-size: 60px;
+  font-size: 55px;
   font-weight: bold;
   text-align: center;
   position: relative;
-  margin-top: 44%;
+  margin-top: 40px;
 }
 
 #reset {
   width: 60%;
-  margin-left: 20%;
+  margin-left: 15%;
   font-size: 55px;
   font-weight: bold;
   cursor: pointer;
@@ -122,6 +122,7 @@ body {
   border-radius: 6px;
   text-align: center;
   margin-top: 20px;
+  padding: 5%;
 }
 
 #reset:hover {

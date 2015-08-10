@@ -4,7 +4,7 @@ import Square      from '../models/Square';
 import shuffle     from 'shuffle-array';
 
 export class GameStore {
-  constructor(positions = 9, moves = 100) {
+  constructor(positions = 3, moves = 100) {
     this.positions = positions;
     this.moves = moves;
     this.bindActions(GameActions);

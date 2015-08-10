@@ -19,7 +19,6 @@ describe('GameStore', () => {
   });
 
   it('sets up square values correctly', () => {
-    assert.equal(GameStore.getState().squares.length, 9);
     GameStore.getState().squares.forEach( (s) => {
       assert.equal(s, 0);
     });
