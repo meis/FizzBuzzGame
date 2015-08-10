@@ -1,0 +1,27 @@
+.blink-appear {
+  opacity: 1;
+  display: block !important;
+}
+.blink-appear.blink-appear-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
+}
+.blink-enter {
+  opacity: 1;
+  display: block !important;
+}
+.blink-enter.blink-enter-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
+}
+.blink-leave {
+  opacity: 1;
+  display: block !important;
+}
+.blink-leave.blink-leave-active {
+  opacity: 0;
+  display: none;
+  transition: opacity .5s ease-in-out, display .5s ease-in-out;
+}

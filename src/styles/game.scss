@@ -1,0 +1,133 @@
+$backgroundBody: #fff5c3;
+$backgroundWrapper: #ff7260;
+$backgroundSquare: #9BD7D5;
+$backgroundSquareHover: lighten($backgroundSquare, 5);
+$fontFamily: "Clear Sans", "Helvetica Neue", "Arial", "sans-serif";
+$fontColor: #505050;
+$borderColor: darken($backgroundWrapper,5);
+$borderColorHover: lighten($backgroundWrapper,5);
+
+body {
+  background-color: $backgroundBody;
+  font-family: $fontFamily;
+  color: $fontColor;
+}
+#gameWrapper {
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 490px;
+  margin: 0 auto;
+  background: $backgroundWrapper;
+  border-radius: 6px;
+  #title {
+    h1 {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    h2 {
+      text-align: center;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 30px;
+      border-bottom: 1px solid $borderColor;
+      padding-bottom: 10px;
+    }
+  }
+  #scoreBoard {
+    .current {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .current,
+    .remaining,
+    .score {
+      display: inline-block;
+      width: 150px;
+      margin: 0 0 10px 10px;
+      text-align: center;
+    }
+    .value {
+      display: block;
+      font-size: 32px;
+    }
+  }
+  #squares {
+    padding: 10px 10px 0 0;
+    margin-top: 10px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    .square {
+      display: inline-block;
+      background-color: $backgroundSquare;
+      height: 150px;
+      width: 150px;
+      margin: 0 0 10px 10px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 55px;
+      font-weight: bold;
+      position: relative;
+      border-radius: 3px;
+      &:hover {
+        background-color: $backgroundSquareHover;
+      }
+      .combo {
+        position: absolute;
+        display: block;
+        width: 150px;
+        height: 150px;
+        background: #ff7260;
+        top: 0;
+        z-index: 100;
+        display: none;
+      }
+      .value{
+        margin-left: -100%;
+        margin-right: -100%;
+        top: 33%;
+        padding-top: 34%;
+        text-align: center;
+        position: relative;
+      }
+    }
+  }
+  #game-over {
+    position: absolute;
+    width: 470px;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    background-color: #9BD7D5;
+    border-radius: 6px;
+    .text {
+      font-size: 55px;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      margin-top: 40px;
+    }
+  }
+  #reset {
+    width: 60%;
+    margin-left: 15%;
+    font-size: 55px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid $borderColor;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5%;
+    &:hover {
+      border: 1px solid $borderColorHover;
+    }
+  }
+  #howto {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: justify;
+  }
+}
