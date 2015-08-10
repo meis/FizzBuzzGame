@@ -1,3 +1,30 @@
+.blink-appear {
+  opacity: 1;
+  display: block !important; }
+
+.blink-appear.blink-appear-active {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
+
+.blink-enter {
+  opacity: 1;
+  display: block !important; }
+
+.blink-enter.blink-enter-active {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
+
+.blink-leave {
+  opacity: 1;
+  display: block !important; }
+
+.blink-leave.blink-leave-active {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
+
 body {
   background-color: #fff5c3;
   font-family: "Clear Sans", "Helvetica Neue", "Arial", "sans-serif";
@@ -18,7 +45,7 @@ body {
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 30px;
-    border-bottom: 1px solid #f06060;
+    border-bottom: 1px solid #ff5b47;
     padding-bottom: 10px; }
   #gameWrapper #scoreBoard .current {
     font-weight: bold;
@@ -91,41 +118,14 @@ body {
     font-size: 55px;
     font-weight: bold;
     cursor: pointer;
-    border: 1px solid #f06060;
+    border: 1px solid #ff5b47;
     border-radius: 6px;
     text-align: center;
     margin-top: 20px;
     padding: 5%; }
     #gameWrapper #reset:hover {
-      border: 1px solid #f09090; }
+      border: 1px solid #ff897a; }
   #gameWrapper #howto {
     margin-top: 30px;
     padding: 20px;
     text-align: justify; }
-
-.blink-appear {
-  opacity: 1;
-  display: block !important; }
-
-.blink-appear.blink-appear-active {
-  opacity: 0;
-  display: none;
-  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
-
-.blink-enter {
-  opacity: 1;
-  display: block !important; }
-
-.blink-enter.blink-enter-active {
-  opacity: 0;
-  display: none;
-  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
-
-.blink-leave {
-  opacity: 1;
-  display: block !important; }
-
-.blink-leave.blink-leave-active {
-  opacity: 0;
-  display: none;
-  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out; }
